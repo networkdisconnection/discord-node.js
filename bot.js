@@ -13,6 +13,20 @@ client.on('message',msg=>{
         msg.reply("hi") ;
         msg.channel.send(`hi ${msg.author}`) ;
     }
+if (msg.content.includes("早安")){
+    var rnd = Random(3,1);
+    switch (rnd){
+        case 1:msg.reply("morning");break;
+        case 2:msg.reply("安安");break;
+        case 3:msg.reply("你好");break;
+    }
+}
+
+function Random(max,min){
+    var rnd =Math.floor(Math.random()*max)+min;
+    return rnd ;
+}
+
 }) ;
 
 client.login(settings.token) ;
